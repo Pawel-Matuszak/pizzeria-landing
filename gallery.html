@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Home - ADAM'S PIZZA</title>
+    <meta charset='UTF-8'>
+    <meta name="keywords" content="pizza, restaurant, food">
+    <meta name="description" content="Best Pizza in Town">
+    <meta name="author" content="Paweł Matuszak">
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='icon' href='img/icon.png'>
+    <link rel='stylesheet' href='gallery-style.css'>
+    <link href='https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Open+Sans:wght@300;400;600;700&family=Roboto:ital,wght@0,300;0,400;0,500;1,700&display=swap' rel='stylesheet'>
+    <script src='https://kit.fontawesome.com/321ebabd9d.js' crossorigin='anonymous'></script>
+</head>
+<body>
+    <nav class='navbar'>
+        <section class='navbar-content'>
+            <img src='img/logo1.png'>
+            <a href='./index.html'>Home</a>
+            <a href='./menu.html'>Menu</a>
+            <a href='./index.html#aboutus'>About us</a>
+            <a href='./gallery.html'>Gallery</a>
+            <a href='./contact.html'>Contact</a>
+        </section>
+        <img src='img/logo1.png' class='mobile-logo'>
+        <span href='' class='dropdown-menu'><i class="fas fa-caret-square-down"></i></span>
+    </nav>
+    
+    <main>
+        <div class='gallery'>
+            <div class='gallery-element' onclick='openModal(), selectSlide(1)'>
+                <img src='./img/gallery/1.jpg'>
+            </div>
+            <div class='gallery-element' onclick='openModal(), selectSlide(2)'>
+                <img src='./img/gallery/2.jpg'>
+            </div>
+            <div class='gallery-element' onclick='openModal(), selectSlide(3)'>
+                <img src='./img/gallery/3.jpg'>
+            </div>
+            <div class='gallery-element' onclick='openModal(), selectSlide(4)'>
+                <img src='./img/gallery/4.jpg'>
+            </div>
+            <div class='gallery-element' onclick='openModal(), selectSlide(5)'>
+                <img src='./img/gallery/5.jpg'>
+            </div>
+            <div class='gallery-element' onclick='openModal(), selectSlide(6)'>
+                <img src='./img/gallery/6.jpg'>
+            </div>
+            <div class='gallery-element' onclick='openModal(), selectSlide(7)'>
+                <img src='./img/gallery/7.jpg'>
+            </div>
+            <div class='gallery-element' onclick='openModal(), selectSlide(8)'>
+                <img src='./img/gallery/8.jpg'>
+            </div>
+            <div class='gallery-element' onclick='openModal(), selectSlide(9)'>
+                <img src='./img/gallery/9.jpg'>
+            </div>
+        </div>
+        <div id='modal'>
+            <span class='modal-exit' onclick='closeModal()'><i class="fas fa-times"></i></span>
+            <div class='modal-content'>
+                <div class='slides'>
+                    <img src='./img/gallery/1.jpg'>
+                </div>
+                <div class='slides'>
+                    <img src='./img/gallery/2.jpg'>
+                </div>
+                <div class='slides'>
+                    <img src='./img/gallery/3.jpg'>
+                </div>
+                <div class='slides'>
+                    <img src='./img/gallery/4.jpg'>
+                </div>
+                <div class='slides'>
+                    <img src='./img/gallery/5.jpg'>
+                </div>
+                <div class='slides'>
+                    <img src='./img/gallery/6.jpg'>
+                </div>
+                <div class='slides'>
+                    <img src='./img/gallery/7.jpg'>
+                </div>
+                <div class='slides'>
+                    <img src='./img/gallery/8.jpg'>
+                </div>
+                <div class='slides'>
+                    <img src='./img/gallery/9.jpg'>
+                </div>
+            </div>
+            <span class='modal-next' onclick='arrowControl(1)'><i class="fas fa-chevron-right"></i></span>
+            <span class='modal-previous' onclick='arrowControl(-1)'><i class="fas fa-chevron-left"></i></span>
+        </div>
+    </main>
+
+    <footer class='footer'>
+        <div class='footer-content'>
+            <div class='footer-address'> 
+                <p>ADAM'S PIZZA</p>
+                <p>Address:</p>
+                <p>Chiraco Summit</p>
+                <p>Hayfield 99</p>
+            </div>
+            <div class='footer-contact'>
+                <p>Mon-Fri: 9.00-23.00</p>
+                <p>Sat-Sun: 13.00-22.00</p>
+                <p><i class="fas fa-phone"></i><span> +48 123 455 792</span></p>
+                <p><i class="fas fa-envelope"></i><span> adampizza@example.mail</span></p>
+            </div>
+            <div class='icons'>
+                <p>Follow us</p>
+                <a href=''><i class="fab fa-facebook-square"></i></a>
+                <a href=''><i class="fab fa-instagram-square"></i></a>
+            </div>
+        </div> 
+        <hr class='hr'>
+        <div class='copy'>
+            <p>Copyright 2020. All Rights Reserved by ADAM'S PIZZA</p>
+        </div>
+    </footer>
+
+    <script src='gallery.js'></script>
+    <script src='dropdown.js'></script>
+</body>
+</html>

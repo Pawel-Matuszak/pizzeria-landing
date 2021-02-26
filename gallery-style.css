@@ -1,0 +1,116 @@
+@import url('./style-navbar-footer.css');
+
+.gallery{
+    max-width: 1100px;
+    margin: 30px auto;
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    justify-content: center;
+    gap: 25px;
+    padding: 100px 0;
+}
+.gallery:hover{user-select: none;}
+
+@media screen and (max-width:975px){
+    .gallery{
+        grid-template-columns: repeat(2, auto);
+    }
+    @media screen and (max-width:650px){
+        .gallery{
+            grid-template-columns: repeat(1, auto);
+        }
+    }
+}
+
+.gallery-element{
+    max-width: 300px;
+    max-height: 300px;
+    overflow: hidden;
+    position: relative;
+    border-radius: 2px;
+}
+
+.gallery-element:before{
+    content:'';
+    display: block;
+    position: absolute;
+    top:0; left:0; bottom:0; right:0;
+    background-color: rgba(0, 0, 0, .1);
+}
+
+.gallery-element:hover{
+    cursor: pointer;
+    box-shadow: 0 5px 15px 0 rgba(0,0,0,.6);
+}
+
+.gallery-element img{
+    max-height: 300px;
+}
+
+/*MODAL*/
+#modal{
+    position: fixed;
+    top:0; left:0;
+    background: rgba(0,0,0,.97);
+    z-index: 9999;
+    color: #fff;
+    font-size: 55px;
+    width: 100%;
+    height: 100%;
+    display: none;
+}
+#modal:hover{user-select: none;}
+
+#modal .modal-exit{
+    position: fixed;
+    top:20px; right: 150px;
+    z-index: 99999;
+    font-size: 20px;
+    padding: 20px;
+}
+
+.modal-content{
+    position: relative;
+    margin: auto;
+    width: 90%;
+    height: 100%;
+    max-width: 1000px;
+}
+.modal-content .slides{
+    width: 100%;
+    position: absolute;
+    top:50%;
+    transform: translateY(-50%);
+}
+
+.modal-content .slides img{width: 100%;}
+
+.modal-next{
+    position: fixed;
+    right:15px; top:0;
+    font-size: 15px;
+    height: 100%;
+    width: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.1s ease-in-out;
+}
+
+.modal-previous{
+    position: fixed;
+    left:15px; top:0;
+    font-size: 15px;
+    height: 100%;
+    width: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.1s ease-in-out;
+}
+
+.modal-next:hover, .modal-previous:hover, .modal-exit:hover{
+    cursor: pointer;
+    background-color: rgba(92, 92, 92, 0.3);
+    box-shadow: 0 0 0 20px rgba(92, 92, 92, 0.3);
+}

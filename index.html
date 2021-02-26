@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Home - ADAM'S PIZZA</title>
+    <meta charset='UTF-8'>
+    <meta name="keywords" content="pizza, restaurant, food">
+    <meta name="description" content="Best Pizza in Town">
+    <meta name="author" content="Paweł Matuszak">
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='icon' href='img/icon.png'>
+    <!-- <link rel='stylesheet' href='contact-style.css'> -->
+    <link rel='stylesheet' href='home-style.css'>
+    <link href='https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Open+Sans:wght@300;400;600;700&family=Roboto:ital,wght@0,300;0,400;0,500;1,700&display=swap' rel='stylesheet'>
+    <script src='https://kit.fontawesome.com/321ebabd9d.js' crossorigin='anonymous'></script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+    integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+    crossorigin=""/>
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+    integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+    crossorigin=""></script>
+    <script src="config.js"></script>
+</head>
+<body>
+    <nav class='navbar'>
+        <section class='navbar-content'>
+            <img src='img/logo1.png'>
+            <a href='./index.html'>Home</a>
+            <a href='./menu.html'>Menu</a>
+            <a href='#aboutus'>About us</a>
+            <a href='./gallery.html'>Gallery</a>
+            <a href='./contact.html'>Contact</a>
+        </section>
+        <img src='img/logo1.png' class='mobile-logo'>
+        <span href='' class='dropdown-menu'><i class="fas fa-caret-square-down"></i></span>
+    </nav>
+    
+    <main>
+        <section class='slider-container'>
+            <img src='img/1078503.jpg' class='slider'></img>
+        </section>
+    
+        <section class='title-info'>
+            <div class='title'>WELCOME TO ADAM'S PIZZA</div>
+            <div class='phone'>+48 123 455 792</div>
+        </section>
+    
+        <hr class="hr">
+    
+        <section>
+            <div class='subtitle'>MENU</div>
+            <div class="offers">
+                <a href='./menu.html#pizza' class='offer1 offer'><span>Our pizzas</span></a>
+                <a href='./menu.html#salad' class='offer2 offer'><span>Salads</span></a>
+                <a href='./menu.html#chicken' class='offer3 offer'><span>Chicken</span></a>
+                <a href='./menu.html#pasta' class='offer4 offer'><span>Pastas</span></a>
+            </div>
+        </section>
+        
+        <section class='find-us'>
+            
+            <div class="map-container">
+                <div id='map'></div>
+                <div class='contact-container contact-section address'> 
+                    <p class='subtitle'>Address</p>
+                    <p>Chiraco Summit</p>
+                    <p>Hayfield 99</p>
+                </div>
+    
+            </div>
+        </section> 
+
+        <section class='about-us'>
+            <div class='subtitle' id='aboutus'>ABOUT US</div>
+            
+            <div class='text'>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nec ex augue. Sed auctor interdum turpis quis aliquam. Integer ut placerat sem. Phasellus finibus ornare massa, et dapibus ligula congue non. Sed at suscipit felis. Vestibulum facilisis orci mi, et faucibus lacus mattis quis. Vivamus dictum sollicitudin dignissim.</p>
+                <p>Integer euismod erat at ligula dictum volutpat. Nam suscipit porttitor elit pellentesque sollicitudin. Sed at quam sagittis magna scelerisque tristique quis sed lorem. Quisque commodo orci eu nunc semper auctor. Pellentesque dolor nisi, imperdiet non tortor vel, mattis eleifend dui. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Quisque vitae aliquet elit. Curabitur scelerisque mattis urna, vitae laoreet nunc ornare commodo. Nunc accumsan eu purus hendrerit placerat.</p>
+            </div>
+        </section>
+
+        
+    </main>
+    
+    <footer class='footer'>
+        <div class='footer-content'>
+            <div class='footer-address'> 
+                <p>ADAM'S PIZZA</p>
+                <p>Address:</p>
+                <p>Chiraco Summit</p>
+                <p>Hayfield 99</p>
+            </div>
+            <div class='footer-contact'>
+                <p>Mon-Fri: 9.00-23.00</p>
+                <p>Sat-Sun: 13.00-22.00</p>
+                <p><i class="fas fa-phone"></i><span> +48 123 455 792</span></p>
+                <p><i class="fas fa-envelope"></i><span> adampizza@example.mail</span></p>
+            </div>
+            <div class='icons'>
+                <p>Follow us</p>
+                <a href=''><i class="fab fa-facebook-square"></i></a>
+                <a href=''><i class="fab fa-instagram-square"></i></a>
+            </div>
+        </div> 
+        <hr class='hr'>
+        <div class='copy'>
+            <p>Copyright 2020. All Rights Reserved by ADAM'S PIZZA</p>
+        </div>
+    </footer>
+
+    <script src='dropdown.js'></script>
+    <script src='map.js'></script>
+</body>
+</html>
