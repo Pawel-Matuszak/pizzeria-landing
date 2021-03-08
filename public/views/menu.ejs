@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Home - ADAM'S PIZZA</title>
+    <meta charset='UTF-8'>
+    <meta name="keywords" content="pizza, restaurant, food">
+    <meta name="description" content="Best Pizza in Town">
+    <meta name="author" content="Paweł Matuszak">
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='icon' href='../img/icon.png'>
+    <link rel='stylesheet' href='../menu-style.css'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossorigin="anonymous" />
+    <% if (menu[0].type == "pizza") { %>
+        <style> .nav1{background-color: rgba(0,0,0,.1)} </style>
+    <% } else if(menu[0].type == "salad"){%>
+        <style> .nav2{background-color: rgba(0,0,0,.1)} </style>
+    <% } else if(menu[0].type == "chicken"){%>
+        <style> .nav3{background-color: rgba(0,0,0,.1)} </style>
+    <% } else if(menu[0].type == "pasta"){%>
+        <style> .nav4{background-color: rgba(0,0,0,.1)} </style>
+    <% } else if(menu[0].type == "burgers"){%>
+        <style> .nav5{background-color: rgba(0,0,0,.1)} </style>
+    <% } else if(menu[0].type == "drinks"){%>
+        <style> .nav6{background-color: rgba(0,0,0,.1)} </style>
+    <% } %>
+
+</head>
+<body>
+    <%- include("_navbar.ejs") %>
+    
+    <main>
+        <div class='nav'>
+            <a href='/menu/pizza' class='pizza nav1 nav-option'>Pizza</a>
+            <a href='/menu/salad' class='salad nav2 nav-option'>Salad</a>
+            <a href='/menu/chicken' class='chicken nav3 nav-option'>Chicken</a>
+            <a href='/menu/pasta' class='pasta nav4 nav-option'>Pasta</a>
+            <a href='/menu/burgers' class='nav5 nav-option'>Burgers</a>
+            <a href='/menu/drinks' class='nav6 nav-option'>Drinks</a>
+        </div>
+        <div class='container'>
+            <div id='container-key'>
+                <% if (menu[0].type !== "salad" && menu[0].type !== "drinks") { %>
+                    <p>Small</p>
+                    <p>Medium</p>
+                    <p>Large</p>
+                <% } %>
+            </div>
+            <% menu.forEach(element => { %>
+                <div class='container-content'>
+                    <div>
+                        <img src='../img/menu/<%=element.img%>'>
+                        <p class='name' id='name'><%=element.name %></p>
+                        <p class='desc'><%=element.desc %></p>
+                        <% if (element.type !== "salad" && element.type !== "drinks") { %>
+                            <p class='price' id=<%=element.name %>>
+                                <span><%=element.priceS %>$</span>
+                                <span><%=element.priceM %>$</span>
+                                <span><%=element.priceL %>$</span>
+                            </p>
+                        <% }else{ %>
+                            <p class='price' id=<%=element.name%>><%=element.price%>$</p>
+                        <% } %>
+                        <a href="/add-to-cart/<%=element._id%>" class="add-to-cart"><i class="fas fa-shopping-cart" aria-hidden="true"></i> Add to cart</a>
+                    </div>
+                </div>
+            <% }) %>
+            
+        </div>
+    </main>
+    
+    <%- include("_footer.ejs") %>
+
+    <!-- <script type='module' src='menuLoad.js' ></script> -->
+</body>
+</html>

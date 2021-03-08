@@ -1,0 +1,203 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400&display=swap');
+/*GENERAL*/
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+a{
+    color: rgba(0, 0, 0, 0.9);
+}
+
+body{
+    font-family: 'Roboto', sans-serif;
+    background: linear-gradient(#f9f9f9, #fff);
+    color: rgba(0, 0, 0, 0.9);
+
+}
+
+/*HR*/
+
+.hr{
+    width: 55%;
+    margin: 20px auto;
+}
+
+/*NAVBAR*/
+
+.navbar{
+    position: sticky;
+    top: 0;
+    z-index: 9999;
+    background: rgb(255, 255, 255);
+}
+
+.navbar-content{
+    display: flex;
+    justify-content: space-around;
+    margin: 0 8rem;
+    align-items: center;
+}
+
+@media screen and (max-width:1060px){
+    .navbar-content{
+        margin: 0;
+    }
+}
+
+.navbar-left{
+    display: flex;
+    justify-content: left;
+    align-items: center;
+}
+
+.fas{
+    font-size: 1.2rem;
+    color: rgba(20, 20, 20, 0.9);
+}
+
+.navbar .mobile-logo{display:none}
+
+.navbar-left img{
+    height: 5rem;
+    margin-right: 2rem;
+    background: #fff;
+    border-radius: 10px;
+}
+
+.dropdown-menu{
+    display: none;
+    padding: 0px 5px;
+    margin: 5px 50px;
+    position: absolute;
+    top:20px;
+    right: 20px;
+    user-select: none;
+}
+
+.dropdown-menu:hover{
+    transform: none;
+    border: none;
+}
+
+.navbar-content a{
+    display: inline-block;
+    font-size: 1.4rem;
+    padding: 0px 5px;
+    margin: 5px 15px;
+    transition: transform 0.2s ease-in-out;
+}
+
+.navbar-content a:hover{
+    transform: scale(1.1);
+}
+
+/*FOOTER*/
+
+.footer{
+    display: block;
+    background: linear-gradient(#A5A5C7, #b3b1ce);
+    padding-top: 50px;
+    padding-bottom: 25px;
+    font-size: 1.2rem;
+    font-weight: 300;
+}
+
+.footer-content{
+    display: flex;
+    flex-wrap: wrap;
+    justify-items: center;
+    justify-content: center;
+    gap: 50px;
+}
+
+.footer-content .footer-address{
+    justify-self: flex-end;
+    border-left: 1px solid rgba(20, 20, 20, 0.5);
+    padding-left: 10px;
+}
+
+.footer-content .footer-contact{
+    border-left: 1px solid rgba(20, 20, 20, 0.5);
+    padding-left: 10px;
+}
+
+.footer-content .icons{
+    font-size: 1.5rem;
+    justify-self: flex-start;
+    border-left: 1px solid rgba(20, 20, 20, 0.5);
+    padding-left: 10px;
+}
+
+.copy{
+    text-align: center;
+}
+
+.footer .hr{
+    display: block;
+    border: 1px solid rgba(20, 20, 20, 0.5);
+}
+
+/*RESPONSIVE NABVAR*/
+
+@media screen and (max-width:830px){
+    .dropdown-menu{
+        display: block;
+        z-index: 9999;
+        color: rgba(211, 211, 211);
+    }
+
+    .navbar-left{
+        display: block;
+    }
+
+    .dropdown-menu:hover{
+        cursor: pointer;
+    }
+
+    .fa-caret-square-down{
+        font-size: 40px;
+    }
+
+    .navbar-content{
+        display: none;
+    }
+
+    .navbar-content a{
+        display: block;
+        padding: 7px 0;
+    }
+
+    .navbar-content a:hover{
+        border:none
+    }
+
+    .navbar-dropdown{
+        z-index: 999;
+        display: inline-block;
+        position: absolute;
+        top:65px;
+        right:70px;
+        height: 290px;
+        background: #fff;
+        text-align: center;
+        box-shadow: 0 10px 15px 0 rgba(0,0,0,.5);
+        padding: 10px 10px;
+    }
+
+    .navbar-content img{display:none;}
+
+    .navbar .mobile-logo{
+        display: block;
+        position: absolute;
+        left: 40px;
+        top: 10px;
+        z-index: 1;
+        width: 100px;
+        background: #fff;
+        border-radius: 10px;
+        box-shadow: 0 10px 10px 0 rgba(0,0,0, .4);
+    }
+}

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Contact us - ADAM'S PIZZA</title>
+    <meta charset='UTF-8'>
+    <meta name="keywords" content="pizza, restaurant, food">
+    <meta name="description" content="Best Pizza in Town">
+    <meta name="author" content="Paweł Matuszak">
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='icon' href='../img/icon.png'>
+    <link rel='stylesheet' href='../contact-style.css'>
+    <script src='https://kit.fontawesome.com/321ebabd9d.js' crossorigin='anonymous'></script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+    integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+    crossorigin=""/>
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+    integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+    crossorigin=""></script>
+</head>
+<body>
+    <%- include("_navbar.ejs") %>
+
+    <main>
+        <div id='map'></div>
+
+        <section class='contact'>
+            <div class='contact-container'>
+                <div class='contact-section address'> 
+                    <p class='subtitle'>Address</p>
+                    <p>Chiraco Summit</p>
+                    <p>Hayfield 99</p>
+                </div>
+                <div class='contact-section open'>
+                    <p class='subtitle'>Open</p>
+                    <p>Mon-Fri: 9.00-23.00</p>
+                    <p>Sat-Sun: 13.00-22.00</p>
+                </div>
+                <div class='contact-section contact'>
+                    <p class='subtitle'>Contact</p>
+                    <p><i class="fas fa-phone"></i><span> +48 123 455 792</span></p>
+                    <p><i class="fas fa-envelope"></i><span> adampizza@example.mail</span></p>
+                </div>
+            </div>
+        </section>
+    
+        <!-- <section class='contact-form'>
+            <form action='' method="GET">
+                <input type='text' placeholder='Name' required>
+                <input type='tel' placeholder='Phone' required>
+                <input type='email' placeholder='Email' required>
+    
+                <textarea class='textarea' placeholder="Your message" required maxlength='600'></textarea>
+    
+                <input type='submit'>
+            </form>
+        </section> -->
+    </main>
+
+    <%- include("_footer.ejs") %>
+
+    <script src='map.js'></script>
+</body>
+</html>
