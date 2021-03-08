@@ -9,7 +9,12 @@
             <a href='/contact'>Contact</a>
         </div>
         <div class="navbar-right">
-            <a href='/menu/cart'><i class="fas fa-shopping-cart"></i> Cart</a>
+            <a href='/menu/cart'>
+                <i class="fas fa-shopping-cart"></i> Cart
+                <% if (session.cart) { %>
+                    <span class="badge"><%=session.cart.totalQuantity%></span>
+                <% } %>
+            </a>
             <!-- <a href='/menu/signup'><i class="fas fa-shopping-cart"></i> Signup</a> -->
             <!-- <a href='/menu/login'><i class="fas fa-shopping-cart"></i> Login</a> -->
         </div>

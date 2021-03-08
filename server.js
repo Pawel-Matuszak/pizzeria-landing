@@ -14,33 +14,33 @@ const menuRouter = require("./routes/menu.js");
 const session = require("express-session");
 const MongoStore = require("connect-mongo").default;
 const Cart = require("./models/cart.js");
-
 const PORT = 8888;
 
-app.set('view engine', "ejs");
 app.set('views', './public/views');
+app.set('view engine', "ejs");
 app.use(express.urlencoded({extended: false}));
-app.use("/menu", menuRouter);
-app.use("/", router);
-app.set('trust proxy', 1);
-app.use(session({
-    secret: 'secrethgrtd',
+
+const sess = {
+    secret: 'keyboard cat',
     resave: false,
     saveUninitialized: false,
-    store: MongoStore.create({
-        mongoUrl: uri
-    }),
-    cookie: {
-        maxAge: 10*60*60*1000, 
-        // secure: true, 
-    },
-  }));
-app.use(express.static(path.join(__dirname, "public")));
+    cookie: {}
+}
 
-app.use((req, res, next)=>{
+if (app.get('env') === 'production') {
+    app.set('trust proxy', 1)
+    sess.cookie.secure = true
+}
+app.use(session(sess))
+
+app.use(express.static(path.join(__dirname, "public")));
+app.use(function(req, res, next) {
     res.locals.session = req.session;
     next();
-})
+});
+app.use("/menu", menuRouter); 
+app.use("/", router);
+
 
 app.get("/leaflet", (req, res)=>{
     res.send({LEAFLET_ACCESS_TOKEN});
@@ -55,10 +55,17 @@ app.get("/add-to-cart/:id", async (req, res)=>{
     const collection = client.db(DB_NAME).collection("menu");
     const product = await collection.findOne({_id: new ObjectId(productId)});
 
-    cart.add(productId, product.price);
+    cart.add(productId, product);
     req.session.cart = cart;
-    console.log(req.session.cart);
-    res.redirect("/menu");
+    res.redirect("back");
+})
+
+app.get("/remove-from-cart/:id", async (req, res)=>{
+    const productId = req.params.id;
+    const cart = new Cart((req.session.cart) ? req.session.cart : []);
+    cart.remove(productId);
+    req.session.cart = cart;
+    res.redirect("back");
 })
 
 app.listen(PORT, ()=>{

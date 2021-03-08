@@ -41,6 +41,26 @@ body{
     align-items: center;
 }
 
+.navbar-right a{
+    position: relative;
+}
+
+.badge{
+    position: absolute;
+    bottom:-13px;
+    right:-10px;
+    font-size: 1.2rem;
+    background-color: #b62014;
+    color: #fff;
+    width: 25px;
+    height: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+
+}
+
 @media screen and (max-width:1060px){
     .navbar-content{
         margin: 0;
