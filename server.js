@@ -1,6 +1,7 @@
 require('dotenv').config();
 const DB_PASSWORD = process.env.DB_PASSWORD;
 const DB_NAME = process.env.DB_NAME;
+const SESSION_SECRET = process.env.SESSION_SECRET;
 const MongoClient = require('mongodb').MongoClient;
 const ObjectId = require('mongodb').ObjectId;
 const uri = "mongodb+srv://blogAdmin:"+DB_PASSWORD+"@cluster0.wgyfb.mongodb.net/"+DB_NAME+"?retryWrites=true&w=majority";
@@ -21,10 +22,14 @@ app.set('view engine', "ejs");
 app.use(express.urlencoded({extended: false}));
 
 const sess = {
-    secret: 'keyboard cat',
+    secret: SESSION_SECRET,
     resave: false,
     saveUninitialized: false,
-    cookie: {}
+    store: MongoStore.create({
+        mongoUrl: uri,
+        dbName: DB_NAME,
+    }),
+    cookie: {originalMaxAge: 3*60*60*1000},
 }
 
 if (app.get('env') === 'production') {

@@ -26,14 +26,6 @@ module.exports = function Cart(oldCart){
         }
         this.totalQuantity--;
     }
-
-    this.getArray = (items)=>{
-        const arrayOfIds = [];
-        items.forEach(item => {
-            arrayOfIds.push(item.id);
-        });
-        return arrayOfIds;
-    }
 }
 
 // const cart = new Cart([{id:5, quantity: 2, price: 100}]);

@@ -15,7 +15,6 @@ body{
     font-family: 'Roboto', sans-serif;
     background: linear-gradient(#f9f9f9, #fff);
     color: rgba(0, 0, 0, 0.9);
-
 }
 
 /*HR*/
@@ -107,11 +106,6 @@ body{
     font-size: 1.4rem;
     padding: 0px 5px;
     margin: 5px 15px;
-    transition: transform 0.2s ease-in-out;
-}
-
-.navbar-content a:hover{
-    transform: scale(1.1);
 }
 
 /*FOOTER*/
