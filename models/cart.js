@@ -27,14 +27,3 @@ module.exports = function Cart(oldCart){
         this.totalQuantity--;
     }
 }
-
-// const cart = new Cart([{id:5, quantity: 2, price: 100}]);
-// cart.add(1, 10)
-// cart.add(1, 10)
-// cart.add(1, 10)
-// cart.add(1, 15)
-// cart.add(3, 33)
-// console.log(cart.items);
-// console.log(cart.totalQuantity);
-// console.log(cart.totalPrice);
-// console.log(cart.getArray(cart.items));

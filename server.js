@@ -70,6 +70,9 @@ app.get("/remove-from-cart/:id", async (req, res)=>{
     const cart = new Cart((req.session.cart) ? req.session.cart : []);
     cart.remove(productId);
     req.session.cart = cart;
+    if(req.session.cart.items.length<=0){
+        req.session.cart = null;
+    }
     res.redirect("back");
 })
 

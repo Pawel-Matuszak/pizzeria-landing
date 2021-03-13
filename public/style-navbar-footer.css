@@ -5,6 +5,7 @@
     padding: 0px;
     box-sizing: border-box;
     text-decoration: none;
+    font-family: 'Roboto', sans-serif;
 }
 
 a{
@@ -12,7 +13,6 @@ a{
 }
 
 body{
-    font-family: 'Roboto', sans-serif;
     background: linear-gradient(#f9f9f9, #fff);
     color: rgba(0, 0, 0, 0.9);
 }

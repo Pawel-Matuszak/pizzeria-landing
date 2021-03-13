@@ -51,6 +51,14 @@ router.get("/cart", (req, res)=>{
     res.render("cart");
 })
 
+router.get("/checkout", (req, res)=>{
+    if(!req.session.cart){
+        res.redirect("/menu");
+        return;
+    }
+    res.render("checkout")
+})
+
 // router.get("/login", (req, res)=>{
 //     res.render("login");
 // })

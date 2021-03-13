@@ -15,31 +15,29 @@
 <body>
     <%- include("_navbar.ejs") %>
     <main>
-        <form action="/checkout" method="POST">
-            <div class="cart-container">
-            <%if (session.cart && session.cart.items.length>0) {%>
-                <% session.cart.items.forEach((product) => { %>
-                    <div class="cart-item container-content">
-                        <img src="../img/menu/<%=product.item.img %>">
-                        <p class='name' id='name'><%=product.item.name %></p>
-                        <p class='desc'><%=product.item.desc %></p>
-                        <p class='price'><%=product.item.price %>$</p>
-                        <input class='quantity'type="number" value="<%=product.quantity%>" disabled>
-                                                                                                    <!-- //validation -->
-                        <a href="/remove-from-cart/<%=product.id%>" class="remove-from-cart"><i class="fas fa-times"></i></a>
-                    </div>
-                <% }) %>
-                <div class="total">
-                    <p class="total-price">Total: <%=Math.ceil(session.cart.totalPrice*100)/100%>$</p>
-                    <button type="submit" class="submit-btn">Checkout</button>
+        <div class="cart-container">
+        <%if (session.cart && session.cart.items.length>0) {%>
+            <% session.cart.items.forEach((product) => { %>
+                <div class="cart-item container-content">
+                    <img src="../img/menu/<%=product.item.img %>">
+                    <p class='name' id='name'><%=product.item.name %></p>
+                    <p class='desc'><%=product.item.desc %></p>
+                    <p class='price'><%=product.item.price %>$</p>
+                    <input class='quantity'type="number" value="<%=product.quantity%>" disabled>
+                                                                                                <!-- //validation -->
+                    <a href="/remove-from-cart/<%=product.id%>" class="remove-from-cart"><i class="fas fa-times"></i></a>
                 </div>
-            <%}else{%>
-                <div class="noitems-msg">No items in cart 
-                    <div><a href="/menu" class="submit-btn noitems-msg-btn">Go shopping</a></div>
-                </div>
-            <%}%>
+            <% }) %>
+            <div class="total">
+                <p class="total-price">Total: <%=Math.ceil(session.cart.totalPrice*100)/100%>$</p>
+                <a type="submit" class="submit-btn" href="/menu/checkout">Checkout</a>
             </div>
-        </form>
+        <%}else{%>
+            <div class="noitems-msg">No items in cart 
+                <div><a href="/menu" class="submit-btn noitems-msg-btn">Go shopping</a></div>
+            </div>
+        <%}%>
+        </div>
     </main>
     <%- include("_footer.ejs") %>
     <script src='../map.js'></script>

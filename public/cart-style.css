@@ -1,7 +1,7 @@
 @import url('style-navbar-footer.css');
 
 .cart-container{
-    margin: auto;
+    margin: 40px auto;
     width: 70vw;
     min-height: 50vh;
 }
@@ -58,7 +58,7 @@
     outline: none;
     border: none;
     font-size: 1.2rem;
-    padding: 6px 10px;
+    padding: 10px 15px;
     border-radius: 5px;
     background: #b62014;
     color: #fff;

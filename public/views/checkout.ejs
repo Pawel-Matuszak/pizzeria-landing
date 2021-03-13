@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Home - ADAM'S PIZZA</title>
+    <meta charset='UTF-8'>
+    <meta name="keywords" content="pizza, restaurant, food">
+    <meta name="description" content="Best Pizza in Town">
+    <meta name="author" content="Paweł Matuszak">
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='icon' href='../img/icon.png'>
+    <link rel='stylesheet' href='../checkout-style.css'>
+    <script src='https://kit.fontawesome.com/321ebabd9d.js' crossorigin='anonymous'></script>
+</head>
+<body>
+    <%- include("_navbar.ejs") %>
+        <form action="/" method="post">
+            <div class="checkout-content">
+                <h2>Checkout</h2>
+                <div class="delivery-details">
+                    <div class="section-field"><label for="first-name">First name</label><input type="text" name="first-name" id="first-name"></div>
+                    <div class="section-field"><label for="last-name">Last name</label><input type="text" name="last-name" id="last-name"></div>    
+                    <div class="section-field"><label for="adress">Adress</label><input type="text" name="adress" id="adress"></div>
+                    <div class="section-field"><label for="zip-code">Zip code</label><input type="text" name="zip-code" id="zip-code"></div>
+                    <div class="section-field"><label for="country">Country</label><input type="text" name="country" id="country"></div>               
+                </div>
+                <div class="card-details">
+                    <div class="section-field"><label for="cardholder-name">Cardholder name</label><input type="text" name="cardholder-name" id="cardholder-name"></div>
+                    <div class="section-field"><label for="card-number">Credit card number</label><input type="text" name="card-number" id="card-number"></div>
+                    <div class="section-field"><label for="expire-date">Expiration date</label><input type="month" name="expire-date" id="expire-date"></div>
+                    <!-- <div class="section-field">
+                        <label>Expiration date</label>
+                        <input type="number" name="expire-month" id="expire-month" placeholder="Month">
+                        <input type="number" name="expire-year" id="expire-year" placeholder="Year">
+                    </div> -->
+                    <div class="section-field"><label for="cvv">CVV</label><input type="text" name="cvv" id="cvv"></div>
+                </div>
+                <div class="summary">
+                    <p>Total: <%=session.cart.totalPrice%>$</p>
+                    <button type="submit" class="submit">Pay </button>
+                </div>
+            </div>
+        </form>
+    <%- include("_footer.ejs") %>
+</body>
+</html>
