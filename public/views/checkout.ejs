@@ -10,6 +10,7 @@
     <link rel='icon' href='../img/icon.png'>
     <link rel='stylesheet' href='../checkout-style.css'>
     <script src='https://kit.fontawesome.com/321ebabd9d.js' crossorigin='anonymous'></script>
+    <script src="https://js.stripe.com/v3/"></script>
 </head>
 <body>
     <%- include("_navbar.ejs") %>
@@ -23,7 +24,7 @@
                     <div class="section-field"><label for="zip-code">Zip code</label><input type="text" name="zip-code" id="zip-code"></div>
                     <div class="section-field"><label for="country">Country</label><input type="text" name="country" id="country"></div>               
                 </div>
-                <div class="card-details">
+                <!-- <div class="card-details">
                     <div class="section-field"><label for="cardholder-name">Cardholder name</label><input type="text" name="cardholder-name" id="cardholder-name"></div>
                     <div class="section-field"><label for="card-number">Credit card number</label><input type="text" name="card-number" id="card-number"></div>
                     <div class="section-field"><label for="expire-date">Expiration date</label><input type="month" name="expire-date" id="expire-date"></div>
@@ -31,15 +32,18 @@
                         <label>Expiration date</label>
                         <input type="number" name="expire-month" id="expire-month" placeholder="Month">
                         <input type="number" name="expire-year" id="expire-year" placeholder="Year">
-                    </div> -->
-                    <div class="section-field"><label for="cvv">CVV</label><input type="text" name="cvv" id="cvv"></div>
-                </div>
+                    </div>
+                    <div class="section-field"><label for="cvv">CVV</label><input type="text" name="cvv" id="cvv"></div>-->
+                    <div id="card-element">
+                        
+                    </div>
                 <div class="summary">
-                    <p>Total: <%=session.cart.totalPrice%>$</p>
+                    <p>Total: <%=session.cart.totalPrice/100%>$</p>
                     <button type="submit" class="submit">Pay </button>
                 </div>
             </div>
         </form>
     <%- include("_footer.ejs") %>
+    <script src="../form-validation.js"></script>
 </body>
 </html>

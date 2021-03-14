@@ -5,6 +5,7 @@ const DB_PASSWORD = process.env.DB_PASSWORD;
 const DB_NAME = process.env.DB_NAME;
 const MongoClient = require('mongodb').MongoClient;
 const uri = "mongodb+srv://blogAdmin:"+DB_PASSWORD+"@cluster0.wgyfb.mongodb.net/"+DB_NAME+"?retryWrites=true&w=majority";
+const stripe = require("stripe")(process.env.STRIPE_SECRET_KEY);
 
 async function getMenu(res, uri, type){
     try {
@@ -51,12 +52,18 @@ router.get("/cart", (req, res)=>{
     res.render("cart");
 })
 
-router.get("/checkout", (req, res)=>{
+router.get("/checkout", async (req, res)=>{
     if(!req.session.cart){
         res.redirect("/menu");
         return;
     }
-    res.render("checkout")
+    const intent = await stripe.paymentIntents.create({
+        amount: req.session.cart.totalPrice*100,
+        currency: 'usd',
+        // Verify your integration in this guide by including this parameter
+        metadata: {integration_check: 'accept_a_payment'},
+      });
+    res.render("checkout", { client_secret: intent.client_secret })
 })
 
 // router.get("/login", (req, res)=>{

@@ -14,13 +14,13 @@ module.exports = function Cart(oldCart){
             })
         }
         this.totalQuantity++
-        this.totalPrice += item.price;
+        this.totalPrice += item.price*100;
     }
 
     this.remove = (itemId)=>{
         let product = this.items.filter(e=>e.id==itemId)[0]
         product.quantity -= 1;
-        this.totalPrice -= product.item.price;
+        this.totalPrice -= product.item.price*100;
         if(this.items.filter(e=>e.id==itemId)[0].quantity<=0){
             this.items = this.items.filter(e=>e.id!=itemId)
         }

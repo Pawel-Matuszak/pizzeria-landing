@@ -29,7 +29,7 @@
                 </div>
             <% }) %>
             <div class="total">
-                <p class="total-price">Total: <%=Math.ceil(session.cart.totalPrice*100)/100%>$</p>
+                <p class="total-price">Total: <%=session.cart.totalPrice/100%>$</p>
                 <a type="submit" class="submit-btn" href="/menu/checkout">Checkout</a>
             </div>
         <%}else{%>

@@ -16,6 +16,7 @@ const session = require("express-session");
 const MongoStore = require("connect-mongo").default;
 const Cart = require("./models/cart.js");
 const PORT = 8888;
+const stripe = require("stripe")(process.env.STRIPE_SECRET_KEY);
 
 app.set('views', './public/views');
 app.set('view engine', "ejs");
@@ -46,6 +47,15 @@ app.use(function(req, res, next) {
 app.use("/menu", menuRouter); 
 app.use("/", router);
 
+// app.post("/create-payment-intent", async (req, res) => {
+//     const paymentIntent = await stripe.paymentIntents.create({
+//       amount: req.session.cart.totalPrice,
+//       currency: "usd"
+//     });
+//     res.send({
+//       clientSecret: paymentIntent.client_secret
+//     });
+//   });
 
 app.get("/leaflet", (req, res)=>{
     res.send({LEAFLET_ACCESS_TOKEN});

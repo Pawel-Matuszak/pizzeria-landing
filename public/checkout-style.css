@@ -92,3 +92,7 @@ h2{
     justify-content: space-between;
     margin: 0 10px;
 }
+
+#card-element{
+    grid-column: 1/3;
+}
